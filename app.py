@@ -5,6 +5,7 @@ import requests
 import gdown
 import os
 
+# thats it
 # file_id = "1F6KYsDqg_7nXflDtjLkYJNV-6PamOhOU"
 # url = f"https://drive.google.com/uc?id={file_id}"
 # output = "similarity.pkl"
