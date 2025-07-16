@@ -5,7 +5,7 @@ import requests
 import gdown
 import os
 
-# thats it
+
 # file_id = "1F6KYsDqg_7nXflDtjLkYJNV-6PamOhOU"
 # url = f"https://drive.google.com/uc?id={file_id}"
 # output = "similarity.pkl"
@@ -37,11 +37,19 @@ def recommend(movie):
 movies_list = pickle.load(open('movies_dict.pkl', 'rb'))
 movies = pd.DataFrame(movies_list)
 
+# SIMILARITY_PATH = "similarity.pkl"
+# SIMILARITY_URL = "https://drive.google.com/file/d/1gLMCPBiQ736EPOX0IQpTACc5G_SZJ_Sv/view?usp=sharing"
+#
+# if not os.path.exists(SIMILARITY_PATH):
+#     gdown.download(SIMILARITY_URL, SIMILARITY_PATH, quiet=False)
+
 SIMILARITY_PATH = "similarity.pkl"
-SIMILARITY_URL = "https://drive.google.com/file/d/1gLMCPBiQ736EPOX0IQpTACc5G_SZJ_Sv/view?usp=sharing"
+SIMILARITY_FILE_ID = "1gLMCPBiQ736EPOX0IQpTACc5G_SZJ_Sv"
+SIMILARITY_URL = f"https://drive.google.com/uc?id={SIMILARITY_FILE_ID}"
 
 if not os.path.exists(SIMILARITY_PATH):
     gdown.download(SIMILARITY_URL, SIMILARITY_PATH, quiet=False)
+
 
 similarity = pickle.load(open('similarity.pkl', 'rb'))
 
